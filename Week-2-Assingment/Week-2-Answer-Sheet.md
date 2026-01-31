@@ -20,8 +20,9 @@ class Solution {
 
             if (map.containsKey(mirror) && !map.get(mirror).isEmpty()) {
                 int j = map.get(mirror).pollLast();
-                used[j] = true;
-                used[i] = true;
+                used[j] = true; 
+                used[i] = true:
+
                 score += i - j;
             } else {
                 map.computeIfAbsent(c, k -> new ArrayDeque<>()).add(i);
