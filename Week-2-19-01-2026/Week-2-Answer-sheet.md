@@ -1,4 +1,4 @@
-#  Minimum String Length After Removing Substrings leetcodde no 2696
+#  Q1: Minimum String Length After Removing Substrings leetcodde no 2696
 ##  Leetcode Submission : https://leetcode.com/problems/minimum-string-length-after-removing-substrings/submissions/1905097914
 ```java
 --- Approach 1: 
