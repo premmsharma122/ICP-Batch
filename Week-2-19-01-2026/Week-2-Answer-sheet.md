@@ -40,3 +40,53 @@ class Solution {
     }
 }
 ```
+#    Q2 : 1544. Make The String Great
+##    Leetcode Submission : https://leetcode.com/problems/make-the-string-great/submissions/1905123755
+```java
+---- Approach 1: 
+class Solution {
+    public String makeGood(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        boolean f = true;
+        while(f){
+            f=false;
+            for(int i=0; i+1<sb.length(); i++){
+                char a = Character.toLowerCase(sb.charAt(i));
+                char b = Character.toLowerCase(sb.charAt(i+1));
+                if(a==b){
+                    sb.deleteCharAt(i);
+                    if(i+1<sb.length()) sb.deleteCharAt(i+1);
+                    f=true;
+                    break;
+                }
+
+            }
+        }
+        return sb.toString();
+    }
+}
+------ Approach 2:
+class Solution {
+    public String makeGood(String s) {
+        StringBuilder stack = new StringBuilder();
+
+        for (char ch : s.toCharArray()) {
+            int n = stack.length();
+
+            if (n > 0) {
+                char top = stack.charAt(n - 1);
+
+                // same letter, opposite case
+                if (Character.toLowerCase(top) == Character.toLowerCase(ch)
+                        && top != ch) {
+                    stack.deleteCharAt(n - 1); 
+                    continue;
+                }
+            }
+            stack.append(ch);
+        }
+        return stack.toString();
+    }
+}
+
+```
