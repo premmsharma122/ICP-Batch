@@ -170,3 +170,27 @@ class Solution {
 }
 
 ```
+#    Question 5: 950. Reveal Cards In Increasing Order
+##    LeetCode Submission : https://leetcode.com/problems/reveal-cards-in-increasing-order/submissions/1898636863
+```java
+class Solution {
+    public int[] deckRevealedIncreasing(int[] deck) {
+        Queue<Integer> q = new LinkedList<>();
+        Arrays.sort(deck);
+        for(int i=0; i<deck.length; i++){
+            q.add(i);
+        }
+        int ans[] = new int[deck.length];
+        for(int a : deck){
+            int idx=q.poll();
+            ans[idx] = a;
+            if(!q.isEmpty()){
+                q.offer(q.poll());
+            }
+        }
+        return ans;
+    }
+}
+```
+#    Question 6: 1696. Jump Game VI
+##    Lee
