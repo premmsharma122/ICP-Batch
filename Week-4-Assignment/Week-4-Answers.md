@@ -129,3 +129,32 @@ class Solution {
     }
 }
 ```
+#    Question 6: 1019. Next Greater Node In Linked List
+##    LeetCode Submission : https://leetcode.com/problems/next-greater-node-in-linked-list/submissions/1907552457
+```java
+class Solution {
+    public int[] nextLargerNodes(ListNode head) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        while(head != null){
+            arr.add(head.val);
+            head = head.next;
+        }
+        int[] nxt= new int[arr.size()];
+
+        for(int i =0; i < arr.size(); i++){
+            int j = i +1;
+            while(j < arr.size() && arr.get(j) <= arr.get(i)){
+                j++;
+            }
+
+            if(j < arr.size()){
+                nxt[i] = arr.get(j);
+            } else {
+                nxt[i] = 0;
+            }
+        }
+
+        return nxt;
+    }
+}
+```
