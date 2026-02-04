@@ -193,4 +193,53 @@ class Solution {
 }
 ```
 #    Question 6: 1696. Jump Game VI
-##    Lee
+##    LeetCode Subsmission : https://leetcode.com/problems/jump-game-vi/submissions/1660814734
+```java
+--Aprooach 1:
+class Solution {
+    int[] dp;
+    int n, k;
+    int[] nums;
+    public int maxResult(int[] nums, int k) {
+        this.nums = nums;
+        this.k = k;
+        this.n = nums.length;
+        dp = new int[n];
+        Arrays.fill(dp, Integer.MIN_VALUE);
+        return dfs(0);
+    }
+    private int dfs(int i) {
+
+        if (i == n - 1) return nums[i];
+
+        if (dp[i] != Integer.MIN_VALUE) return dp[i];
+        int best = Integer.MIN_VALUE;
+        for (int j = i + 1; j <= i + k && j < n; j++) {
+            best = Math.max(best, dfs(j));
+        }
+
+        dp[i] = nums[i] + best;
+        return dp[i];
+    }
+}
+Hit TLE_______
+-- Approach 2:
+Deque<Integer> dq = new LinkedList<>();
+        int dp[] = new int[nums.length];
+        dp[0] = nums[0];
+        dq.add(0);
+
+        for(int i=1; i<nums.length; i++){
+            while(!dq.isEmpty() && i-k > dq.peekFirst()){
+                dq.pollFirst();
+            }
+            dp[i] = nums[i] + dp[dq.peekFirst()];
+            while(!dq.isEmpty() && dp[i] >= dp[dq.peekLast()]){
+                dq.pollLast();
+            }
+            dq.addLast(i);
+        }
+        return dp[nums.length-1];
+    }
+} 
+```
