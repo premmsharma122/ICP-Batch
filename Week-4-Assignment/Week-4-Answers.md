@@ -65,3 +65,47 @@ class Solution {
     }
 }
 ```
+#    Question 3: 3510. Minimum Pair Removal to Sort Array II
+##    LeetCode Submission : 
+```java
+-- Coming Soon..
+```
+#    Question 4: 2816. Double a Number Represented as a Linked List
+##    Submission Link : https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/submissions/1907223441
+```java
+class Solution {
+    public ListNode doubleIt(ListNode head) {
+        head = reverse(head);
+
+        int carry = 0;
+        ListNode curr = head;
+
+        while (curr != null) {
+            int val = curr.val * 2 + carry;
+            curr.val = val % 10;
+            carry = val / 10;
+
+            if (curr.next == null && carry > 0) {
+                curr.next = new ListNode(carry);
+                carry = 0;
+                break;
+            }
+
+            curr = curr.next;
+        }
+
+        return reverse(head);
+    }
+
+    private ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
+    }
+}
+```
