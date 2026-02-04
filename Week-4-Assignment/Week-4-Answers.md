@@ -109,3 +109,23 @@ class Solution {
     }
 }
 ```
+#    Question 5:  2289. Steps to Make Array Non-decreasing
+##    LeetCode Submission : https://leetcode.com/problems/steps-to-make-array-non-decreasing/submissions/1907527480
+```java
+class Solution {
+    public int totalSteps(int[] nums) {
+        int ans =0;
+        Stack<int[]> st = new Stack<>();
+        for(int i=nums.length-1; i>=0; i--){
+            int c=0;
+            while(!st.isEmpty() && st.peek()[0]<nums[i]){
+                c = Math.max(c+1,st.peek()[1]);
+                st.pop();
+            }
+            ans = Math.max(ans,c);
+            st.push(new int[]{nums[i],c});
+        }
+        return ans;
+    }
+}
+```
