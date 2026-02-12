@@ -6,7 +6,7 @@ Step 1: Remove all 1s
 If any element is 1, increase it to 2.
 
 Because every number is divisible by 1, so it will always break the condition.
-
+  
 Step 2: Fix divisibility
 
 Traverse from left to right.
