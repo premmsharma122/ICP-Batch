@@ -47,6 +47,8 @@ Constraints
           Sample output 1 
 51	
 ```
+
+```java
 import java.util.*;
 
 public class question1 {
@@ -105,3 +107,4 @@ public class question1 {
         sc.close();
     }
 }
+```
