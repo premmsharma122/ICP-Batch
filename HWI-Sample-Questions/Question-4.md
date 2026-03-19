@@ -7,7 +7,7 @@ its tastiness by the number of taste points you get
 from that food.
 You have N types of food. You can buy any type
 any number of times, as long as the total number
-of meals does not exceed M.
+of meals does not exceed M. 
 However, you don't want to grow tired of a food if
 you buy it too often. Therefore, you will get v[i] −
 d[i] × (ti − 1) taste points when you buy the i-th
