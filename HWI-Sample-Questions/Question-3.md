@@ -3,7 +3,7 @@
 ```sql
 You are given a tree with n nodes rooted at node 1. You are also 
 given an array color representing the colour of each node in the 
-tree. 
+tree.   
 A set of nodes is beautiful if it satisfies the following conditions: 
 • All nodes in the set have different colors. 
 • For any pair of nodes (u, v), either u is the ancestor of v or v is 
